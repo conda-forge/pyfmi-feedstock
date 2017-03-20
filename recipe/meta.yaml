@@ -31,7 +31,6 @@ requirements:
     - fmilib
     - numpy x.x
     - cython
-
   run:
     - python
     - fmilib
