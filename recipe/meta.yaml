@@ -26,14 +26,12 @@ requirements:
     - python
     - setuptools
     - fmilib
-    - numpy        # [not (win and py36)]
-    - numpy         # [win and py36]
+    - numpy
     - cython
   run:
     - python
     - fmilib
-    - {{ pin_compatible('numpy') }}   # [not (win and py36)]
-    - {{ pin_compatible('numpy') }}   # [win and py36]
+    - {{ pin_compatible('numpy') }}
     - scipy
     - lxml
     - assimulo
