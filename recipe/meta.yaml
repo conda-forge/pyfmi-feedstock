@@ -17,25 +17,23 @@ source:
     - get_temp_location-keyerror.patch
 
 build:
-  features:
-    - vc9  # [win and py27]
-    - vc14  # [win and py>=35]
-  number: 2
+  number: 3
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
+  host:
     - python
     - setuptools
     - fmilib
-    - numpy 1.9.*  # [not (win and py36)]
-    - numpy 1.11.*  # [win and py36]
+    - numpy        # [not (win and py36)]
+    - numpy         # [win and py36]
     - cython
   run:
     - python
     - fmilib
-    - numpy >=1.9  # [not (win and py36)]
-    - numpy >=1.11  # [win and py36]
+    - {{ pin_compatible('numpy') }}   # [not (win and py36)]
+    - {{ pin_compatible('numpy') }}   # [win and py36]
     - scipy
     - lxml
     - assimulo
