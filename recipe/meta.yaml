@@ -12,6 +12,7 @@ source:
   patches:
     # https://github.com/cython/cython/issues/1518
     - fix-omp-include.patch
+
     # fix key error in get_temp_location when USER not in env
     # http://trac.jmodelica.org/changeset/9706
     - get_temp_location-keyerror.patch
