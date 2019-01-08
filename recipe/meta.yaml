@@ -44,6 +44,13 @@ test:
     - pyfmi.common.plotting
     - pyfmi.examples
     - pyfmi.simulation
+  requires:
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - {{ cdt('mesa-dri-drivers') }}  # [linux]
+    - {{ cdt('libselinux') }}  # [linux]
+    - {{ cdt('libxdamage') }}  # [linux]
+    - {{ cdt('libxfixes') }}  # [linux]
+    - {{ cdt('libxxf86vm') }}  # [linux]
 
 about:
   home: http://www.jmodelica.org/
