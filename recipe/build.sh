@@ -1,5 +1,5 @@
 #!/bin/sh
 
-${PYTHON} setup.py build_ext --inplace --fmil-home=${PREFIX}
+rm src/pyfmi/*.c
 
 ${PYTHON} setup.py install --fmil-home=${PREFIX}

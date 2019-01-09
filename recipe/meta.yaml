@@ -43,7 +43,7 @@ test:
 
 about:
   home: http://www.jmodelica.org/
-  license: LGPL3
+  license: LGPL
   license_file: LICENSE
   summary: PyFMI is a package for loading and interacting with Functional Mock-Up Units
 
