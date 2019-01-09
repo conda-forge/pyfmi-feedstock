@@ -18,14 +18,14 @@ source:
     - get_temp_location-keyerror.patch
 
 build:
-  number: 3
+  number: 1003
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
     - python
-    - setuptools
+    - pip
     - fmilib
     - numpy
     - cython
