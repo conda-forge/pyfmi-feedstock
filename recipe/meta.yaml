@@ -1,24 +1,20 @@
 {% set name = "PyFMI" %}
-{% set version = "2.4.0" %}
+{% set version = "2.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.zip
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip
-  md5: bcbc480b56e7dd86b8d17918ead207d2
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: f0485f786a40448c8ffb9e2b03a587d84cd1fe403c1056f50ab787de18f8ba0b
   patches:
     # https://github.com/cython/cython/issues/1518
     - fix-omp-include.patch
 
-    # fix key error in get_temp_location when USER not in env
-    # http://trac.jmodelica.org/changeset/9706
-    - get_temp_location-keyerror.patch
-
 build:
-  number: 1003
+  number: 1000
 
 requirements:
   build:
@@ -47,7 +43,7 @@ test:
 
 about:
   home: http://www.jmodelica.org/
-  license: LGPL3
+  license: LGPL
   license_file: LICENSE
   summary: PyFMI is a package for loading and interacting with Functional Mock-Up Units
 
