@@ -14,9 +14,11 @@ source:
     - fix-omp-include.patch
     # https://github.com/modelon/PyFMI/issues/10
     - encoding.patch
+    # https://github.com/modelon/PyFMI/issues/12
+    - logging.patch
 
 build:
-  number: 1002
+  number: 1003
 
 requirements:
   build:
