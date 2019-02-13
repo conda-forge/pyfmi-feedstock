@@ -35,7 +35,7 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - scipy
     - lxml
-    - assimulo
+    - assimulo >=3.0
 
 test:
   imports:
