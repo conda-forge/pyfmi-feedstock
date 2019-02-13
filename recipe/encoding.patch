@@ -1,7 +1,7 @@
 From 55bb786945ed5f605328bd27eb4f2cd1e6b60686 Mon Sep 17 00:00:00 2001
 From: Julien Schueller <schueller@phimeca.com>
 Date: Fri, 11 Jan 2019 09:02:05 +0100
-Subject: [PATCH 1/3] Fix encoding issue
+Subject: [PATCH 1/4] Fix encoding issue
 
 Partially addresses #10, it seems there are more of these
 ---
@@ -34,7 +34,7 @@ index d30de5f..8ca80e4 100644
 From 35d0ffd76da42d78c107ba24deff25e0c46b69c7 Mon Sep 17 00:00:00 2001
 From: Julien Schueller <schueller@phimeca.com>
 Date: Fri, 11 Jan 2019 11:53:19 +0100
-Subject: [PATCH 2/3] Fix encoding for convert_str_list
+Subject: [PATCH 2/4] Fix encoding for convert_str_list
 
 ---
  src/common/io.py | 4 ++--
@@ -59,7 +59,7 @@ index 0a3c176..7490aa1 100644
 From e72e5f5de6ffa67d0c2ef571b1213071abd0eb6b Mon Sep 17 00:00:00 2001
 From: Julien Schueller <schueller@phimeca.com>
 Date: Fri, 11 Jan 2019 13:20:21 +0100
-Subject: [PATCH 3/3] Try to fix encoding issue in ResultDymolaBinary
+Subject: [PATCH 3/4] Try to fix encoding issue in ResultDymolaBinary
 
 ---
  src/common/io.py | 4 ++--
@@ -80,3 +80,26 @@ index 7490aa1..76d24ce 100644
          self.dataInfo = self.raw['dataInfo'].transpose()
          
          #self.name = [
+
+From 7917bcf38be9ab87b481463a2863fe52963d5ee1 Mon Sep 17 00:00:00 2001
+From: Julien Schueller <schueller@phimeca.com>
+Date: Wed, 13 Feb 2019 14:26:38 +0100
+Subject: [PATCH 4/4] Try to fix encoding issue in get_variable_index
+
+---
+ src/common/io.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/common/io.py b/src/common/io.py
+index 76d24ce..61f1704 100644
+--- a/src/common/io.py
++++ b/src/common/io.py
+@@ -130,7 +130,7 @@ def get_variable_index(self,name):
+             In integer index.
+         """
+         #Strip name of spaces, for instace a[2, 1] to a[2,1]
+-        name = name.replace(" ", "")
++        name = name.decode().replace(" ", "").encode()
+         
+         try:
+             #return self.name.index(name)
