@@ -7,8 +7,8 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f0485f786a40448c8ffb9e2b03a587d84cd1fe403c1056f50ab787de18f8ba0b
+  url: https://github.com/modelon/PyFMI/archive/PyFMI-{{ version }}.tar.gz
+  sha256: a198707e6af69c2d3b6cb5ef4361875dd964542b1650204e3262052ee9f167ff
   patches:
     # https://github.com/cython/cython/issues/1518
     - fix-omp-include.patch
@@ -18,7 +18,7 @@ source:
     - logging.patch
 
 build:
-  number: 1004
+  number: 1005
 
 requirements:
   build:
