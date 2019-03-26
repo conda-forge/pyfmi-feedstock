@@ -81,25 +81,31 @@ index 7490aa1..76d24ce 100644
          
          #self.name = [
 
-From 7917bcf38be9ab87b481463a2863fe52963d5ee1 Mon Sep 17 00:00:00 2001
+From ef4f12e530f7c64e61c112623eee239803999f98 Mon Sep 17 00:00:00 2001
 From: Julien Schueller <schueller@phimeca.com>
 Date: Wed, 13 Feb 2019 14:26:38 +0100
 Subject: [PATCH 4/4] Try to fix encoding issue in get_variable_index
 
 ---
- src/common/io.py | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ src/common/io.py | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
 diff --git a/src/common/io.py b/src/common/io.py
-index 76d24ce..61f1704 100644
+index 76d24ce..260181b 100644
 --- a/src/common/io.py
 +++ b/src/common/io.py
-@@ -130,7 +130,7 @@ def get_variable_index(self,name):
+@@ -130,8 +130,12 @@ def get_variable_index(self,name):
              In integer index.
          """
          #Strip name of spaces, for instace a[2, 1] to a[2,1]
 -        name = name.replace(" ", "")
-+        name = name.decode().replace(" ", "").encode()
-         
+-        
++        try:
++            name = name.decode()
++        except AttributeError:
++            pass
++        name = name.replace(" ", "").encode()
++
          try:
              #return self.name.index(name)
+             return self.name_lookup[name]

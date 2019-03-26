@@ -18,7 +18,7 @@ source:
     - logging.patch
 
 build:
-  number: 1004
+  number: 1005
 
 requirements:
   build:
