@@ -1,5 +1,5 @@
 {% set name = "PyFMI" %}
-{% set version = "2.5" %}
+{% set version = "2.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,17 +8,13 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/modelon/PyFMI/archive/PyFMI-{{ version }}.tar.gz
-  sha256: a198707e6af69c2d3b6cb5ef4361875dd964542b1650204e3262052ee9f167ff
+  sha256: f59d2634b346d66ce0271aa1d689255a9b400b02570b4007020a10f3d6b92797
   patches:
-    # https://github.com/cython/cython/issues/1518
-    - fix-omp-include.patch
-    # https://github.com/modelon/PyFMI/issues/10
-    - encoding.patch
     # https://github.com/modelon/PyFMI/issues/12
     - logging.patch
 
 build:
-  number: 1005
+  number: 0
 
 requirements:
   build:
