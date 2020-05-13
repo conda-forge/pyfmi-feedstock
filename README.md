@@ -3,7 +3,7 @@ About pyfmi
 
 Home: http://www.jmodelica.org/
 
-Package license: LGPL
+Package license: LGPL-3.0
 
 Feedstock license: BSD 3-Clause
 
