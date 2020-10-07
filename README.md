@@ -3,13 +3,11 @@ About pyfmi
 
 Home: http://www.jmodelica.org/
 
-Package license: LGPL-3.0
+Package license: LGPL-3.0-only
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyfmi-feedstock/blob/master/LICENSE.txt)
 
 Summary: PyFMI is a package for loading and interacting with Functional Mock-Up Units
-
-
 
 Current build status
 ====================
