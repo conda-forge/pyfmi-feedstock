@@ -1,0 +1,24 @@
+From 5fbf4530ab0521339ae81273cd9645c53d6cc9e6 Mon Sep 17 00:00:00 2001
+From: Julien Schueller <schueller@phimeca.com>
+Date: Thu, 1 Apr 2021 13:23:24 +0200
+Subject: [PATCH] Allow PARAMETER causality on ME FMUs
+
+---
+ src/pyfmi/simulation/assimulo_interface.pyx | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/pyfmi/simulation/assimulo_interface.pyx b/src/pyfmi/simulation/assimulo_interface.pyx
+index 081490a..ef5a49e 100644
+--- a/src/pyfmi/simulation/assimulo_interface.pyx
++++ b/src/pyfmi/simulation/assimulo_interface.pyx
+@@ -663,8 +663,8 @@ cdef class FMIODE2(cExplicit_Problem):
+                 input_names = [input_names]
+                 
+             for i,name in enumerate(input_names):
+-                if self._model.get_variable_causality(name) != fmi.FMI2_INPUT:
+-                    raise fmi.FMUException("Variable '%s' is not an input. Only variables specified to be inputs are allowed."%name)
++                if self._model.get_variable_causality(name) not in [fmi.FMI2_INPUT, fmi.FMI2_PARAMETER]:
++                    raise fmi.FMUException("Variable '%s' is not an input/parameter. Only variables specified to be inputs or parameters are allowed."%name)
+                 
+                 if self._model.get_variable_data_type(name) == fmi.FMI2_REAL:
+                     self.input_real_value_refs.append(self._model.get_variable_valueref(name))
