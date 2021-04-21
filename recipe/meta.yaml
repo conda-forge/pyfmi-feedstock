@@ -9,12 +9,9 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/modelon-community/PyFMI/archive/PyFMI-{{ version }}.tar.gz
   sha256: a95b5571428917945965f1cfad1c504c747e7be2a800435480dc205de659c351
-  patches:
-    # https://github.com/modelon-community/PyFMI/pull/78
-    - me_param.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
