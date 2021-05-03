@@ -9,9 +9,12 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/modelon-community/PyFMI/archive/PyFMI-{{ version }}.tar.gz
   sha256: ab37187f1f0307d86a28520439cc4713e9bce0acfe4b0c72576478bf88d10f98
+  patches:
+    # https://github.com/modelon-community/PyFMI/pull/92
+    - 0001-Dont-call-fmi2_import_get_cont._states-ndx-NULL.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
