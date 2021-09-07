@@ -1,5 +1,5 @@
 {% set name = "PyFMI" %}
-{% set version = "2.8.10" %}
+{% set version = "2.9" %}
 
 package:
   name: {{ name|lower }}
@@ -8,10 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/modelon-community/PyFMI/archive/PyFMI-{{ version }}.tar.gz
-  sha256: e627e8d6b4e2085f32e14d86483fe2bd5e1354de3e30647685df05ec8c372cce
-  patches:
-    # https://github.com/modelon-community/PyFMI/pull/92
-    - 0001-Dont-call-fmi2_import_get_cont._states-ndx-NULL.patch
+  sha256: f5dba10ba65e2a650bc7f27f0fd4950f388ece56d2103f5b3cb3e280b8c736f5
 
 build:
   number: 0
