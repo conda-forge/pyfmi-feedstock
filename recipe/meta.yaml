@@ -1,5 +1,5 @@
 {% set name = "PyFMI" %}
-{% set version = "2.9" %}
+{% set version = "2.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/modelon-community/PyFMI/archive/PyFMI-{{ version }}.tar.gz
-  sha256: f5dba10ba65e2a650bc7f27f0fd4950f388ece56d2103f5b3cb3e280b8c736f5
+  sha256: 5fd87f545c05f9201014f20f97913b37b884d64e0b0fc2ceb0fc900a40d0e795
 
 build:
   number: 0
