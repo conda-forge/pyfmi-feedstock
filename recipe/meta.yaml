@@ -11,7 +11,7 @@ source:
   sha256: 259fd8f2d6e1f57bc8ec6b4d701a3fe173782c5d95a677eb2f21e04b64a2be77
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -19,6 +19,7 @@ requirements:
   host:
     - python
     - pip
+    - matplotlib-base  # [python_impl == 'cpython']
     - fmilib
     - numpy
     - cython
