@@ -40,7 +40,7 @@ test:
     - pyfmi.simulation
 
 about:
-  home: http://www.jmodelica.org/
+  home: https://github.com/modelon-community/PyFMI
   license: LGPL-3.0-only
   license_family: LGPL
   license_file: LICENSE
