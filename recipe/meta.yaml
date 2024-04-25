@@ -1,5 +1,5 @@
 {% set name = "PyFMI" %}
-{% set version = "2.11.0" %}
+{% set version = "2.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/modelon-community/PyFMI/archive/PyFMI-{{ version }}.tar.gz
-  sha256: dd972f17d547a648d2b99f0c5cb93adb0fece8fd95afbd8c96a401d379508218
+  sha256: d1b4afc9771e2f631f3f9741539f56a7ff42267f60ff87a4aea83e21fa09fea5
 
 build:
   number: 0
@@ -20,6 +20,7 @@ requirements:
     - cython <3                              # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
