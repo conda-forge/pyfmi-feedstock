@@ -1,19 +1,30 @@
-diff --git a/setup.cfg b/setup.cfg
-index 889cf47..8964a2d 100644
---- a/setup.cfg
-+++ b/setup.cfg
-@@ -8,6 +8,4 @@ install_requires =
-     numpy >= 1.19.5
-     scipy >= 1.10.1, < 1.13
-     cython >= 3.0.7
--    nose-py3 >= 1.6.3
--    matplotlib > 3
-     assimulo >= 3.5.0
 diff --git a/setup.py b/setup.py
-index 5a2bd51..44e210c 100644
+index 5a2bd51..63c1291 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -308,7 +308,6 @@ except Exception:
+@@ -15,20 +15,13 @@
+ # You should have received a copy of the GNU Lesser General Public License
+ # along with this program. If not, see <http://www.gnu.org/licenses/>.
+ 
+-import distutils
++from setuptools import setup
+ import os
+ import shutil
+ import numpy as np
+ import ctypes.util
+ import sys
+ 
+-#If prefix is set, we want to allow installation in a directory that is not on PYTHONPATH
+-#and this is only possible with distutils, not setuptools
+-if str(sys.argv[1:]).find("--prefix") == -1:
+-    from setuptools import setup  
+-else:
+-    from distutils.core import setup
+-
+ try:
+     from Cython.Distutils import build_ext
+     from Cython.Build import cythonize
+@@ -308,7 +301,6 @@ except Exception:
  extra_package_data = ['*fmilib_shared*'] if sys.platform.startswith("win") else []
  extra_package_data += ['libgcc_s_dw2-1.dll'] if copy_gcc_lib else []
  
