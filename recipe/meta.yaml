@@ -14,7 +14,7 @@ source:
     - distutils.patch
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -34,7 +34,6 @@ requirements:
   run:
     - python
     - fmilib
-    - {{ pin_compatible('numpy') }}
     - scipy
     - lxml
     - assimulo >=3.0
