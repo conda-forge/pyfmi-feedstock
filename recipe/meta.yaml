@@ -11,7 +11,7 @@ source:
   sha256: 846f8bd80988a891be2c7fecb2d6faf2b459f61788164b628a7a69a1461ec811
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -31,7 +31,6 @@ requirements:
   run:
     - python
     - fmilib
-    - {{ pin_compatible('numpy') }}
     - scipy
     - lxml
     - assimulo >=3.0
