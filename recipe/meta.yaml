@@ -14,7 +14,8 @@ source:
     - distutils.patch
 
 build:
-  number: 3
+  number: 4
+  skip: true  # [build_platform != target_platform]
 
 requirements:
   build:
@@ -28,7 +29,7 @@ requirements:
     - python
     - pip
     - fmilib
-    - numpy
+    - numpy <2
     - cython
     - assimulo >=3.0
   run:
@@ -37,6 +38,7 @@ requirements:
     - scipy
     - lxml
     - assimulo >=3.0
+    - numpy <2
 
 test:
   imports:
