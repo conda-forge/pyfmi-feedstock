@@ -1,5 +1,5 @@
 {% set name = "PyFMI" %}
-{% set version = "2.13.0" %}
+{% set version = "2.13.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,13 +8,10 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/modelon-community/PyFMI/archive/PyFMI-{{ version }}.tar.gz
-  sha256: 846f8bd80988a891be2c7fecb2d6faf2b459f61788164b628a7a69a1461ec811
-  patches:
-    # https://github.com/modelon-community/PyFMI/pull/236
-    - distutils.patch
+  sha256: c6453baa45229fd720eb26b4423d6632e5e9703123dd7a7852af1e5d0488f2e1
 
 build:
-  number: 4
+  number: 0
   skip: true  # [build_platform != target_platform]
 
 requirements:
@@ -29,16 +26,15 @@ requirements:
     - python
     - pip
     - fmilib
-    - numpy <2
+    - numpy
     - cython
     - assimulo >=3.0
   run:
     - python
     - fmilib
     - scipy
-    - lxml
     - assimulo >=3.0
-    - numpy <2
+    - numpy
 
 test:
   imports:
