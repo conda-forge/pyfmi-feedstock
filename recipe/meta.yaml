@@ -24,6 +24,7 @@ requirements:
     - {{ stdlib("c") }}
   host:
     - python
+    - setuptools
     - pip
     - fmilib
     - numpy
