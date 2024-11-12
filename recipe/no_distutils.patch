@@ -1,0 +1,12 @@
+diff --git a/setup.py b/setup.py
+index d40dd4d..281349a 100644
+--- a/setup.py
++++ b/setup.py
+@@ -22,6 +22,7 @@ import ctypes.util
+ import sys
+ 
+ try:
++    import please_drop_numpy_distutils
+     from numpy.distutils.core import setup
+     have_nd = True
+ except ImportError:
