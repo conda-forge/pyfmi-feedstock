@@ -1,5 +1,5 @@
 {% set name = "PyFMI" %}
-{% set version = "2.17.2" %}
+{% set version = "2.17.3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/modelon-community/PyFMI/archive/PyFMI-{{ version }}.tar.gz
-  sha256: 43f9449c23e5a1a4389d251a56d017fcce0dcdf2497b03f6d40dbfa57f61c84e
+  sha256: fb7b00ce59f755f1465c99febc1d6316e54b45b337171eddc8a497c63616d5f5
   patches:
     # disable numpy.distutils as its deprecated and fails to build
     - no_distutils.patch
