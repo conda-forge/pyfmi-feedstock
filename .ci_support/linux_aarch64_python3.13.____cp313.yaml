@@ -15,15 +15,12 @@ channel_targets:
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 numpy:
-- '2.0'
+- '2'
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.10.* *_cpython
+- 3.13.* *_cp313
 target_platform:
-- linux-64
-zip_keys:
-- - python
-  - numpy
+- linux-aarch64
