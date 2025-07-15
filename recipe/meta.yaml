@@ -12,6 +12,7 @@ source:
   patches:
     # disable numpy.distutils as its deprecated and fails to build
     - no_distutils.patch
+    - 336.patch
 
 build:
   number: 0
