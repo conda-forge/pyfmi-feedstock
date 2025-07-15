@@ -1,5 +1,9 @@
 #!/bin/sh
 
+git clone --depth 1 -b dev-ra-fmil-linking https://github.com/modelon-community/PyFMI.git
+cd PyFMI
+
+
 # ignore dependencies
 rm setup.cfg
 
