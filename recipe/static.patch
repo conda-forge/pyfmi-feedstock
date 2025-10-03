@@ -1,0 +1,13 @@
+diff --git a/setup.py b/setup.py
+index b472b56..7899b70 100644
+--- a/setup.py
++++ b/setup.py
+@@ -368,7 +368,7 @@ def check_extensions():
+         ext_list[i].include_dirs = [np.get_include(), "src", os.path.join("src", "pyfmi")] + incdirs
+         ext_list[i].library_dirs = libdirs
+         ext_list[i].language = "c"
+-        ext_list[i].libraries = [fmil_name]
++        ext_list[i].libraries = [fmil_name, "expat", 'minizip']
+ 
+         if debug_flag:
+             ext_list[i].extra_compile_args = ["-g", "-fno-strict-aliasing", "-ggdb"]

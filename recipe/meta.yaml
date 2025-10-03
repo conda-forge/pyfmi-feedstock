@@ -12,6 +12,7 @@ source:
   patches:
     # disable numpy.distutils as its deprecated and fails to build
     - no_distutils.patch
+    - static.patch  # [win]
 
 build:
   number: 1
@@ -30,6 +31,7 @@ requirements:
     - setuptools
     - pip
     - fmilib
+    - expat  # [win]
     - numpy
     - cython
     - assimulo >=3.0
