@@ -7,7 +7,7 @@ index b472b56..7899b70 100644
          ext_list[i].library_dirs = libdirs
          ext_list[i].language = "c"
 -        ext_list[i].libraries = [fmil_name]
-+        ext_list[i].libraries = [fmil_name, "expat", 'libminizip']
++        ext_list[i].libraries = [fmil_name, "expat", 'libminizip', 'shlwapi']
  
          if debug_flag:
              ext_list[i].extra_compile_args = ["-g", "-fno-strict-aliasing", "-ggdb"]
