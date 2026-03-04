@@ -1,0 +1,67 @@
+context:
+  version: "2.20.0"
+
+package:
+  name: pyfmi
+  version: ${{ version }}
+
+source:
+  url: https://github.com/modelon-community/PyFMI/archive/PyFMI-${{ version }}.tar.gz
+  sha256: 8a010673024973b3742d2029d49d8129975440d833e0b3048d94661ca147cf65
+  patches:
+    # disable numpy.distutils as its deprecated and fails to build
+    - no_distutils.patch
+    - if: win
+      then: static.patch
+
+build:
+  number: 1
+  skip: ${{ build_platform != target_platform }}
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - if: build_platform != target_platform
+      then:
+        - python
+        - numpy
+        - cross-python_${{ target_platform }}
+        - cython
+  host:
+    - python
+    - setuptools
+    - pip
+    - fmilib
+    - numpy
+    - cython
+    - assimulo >=3.0
+    - if: win
+      then: expat
+  run:
+    - python
+    - fmilib
+    - scipy
+    - assimulo >=3.0
+    - numpy
+
+tests:
+  - python:
+      imports:
+        - pyfmi
+        - pyfmi.common
+        - pyfmi.common.plotting
+        - pyfmi.examples
+        - pyfmi.simulation
+
+about:
+  homepage: https://github.com/modelon-community/PyFMI
+  license: LGPL-3.0-only
+  license_family: LGPL
+  license_file: LICENSE
+  summary: PyFMI is a package for loading and interacting with Functional Mock-Up Units
+
+extra:
+  recipe-maintainers:
+    - jschueller
+    - chria
