@@ -1,5 +1,5 @@
 context:
-  version: "2.20.0"
+  version: "2.20.1"
 
 package:
   name: pyfmi
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/modelon-community/PyFMI/archive/PyFMI-${{ version }}.tar.gz
-  sha256: 8a010673024973b3742d2029d49d8129975440d833e0b3048d94661ca147cf65
+  sha256: 4ad49e229ee1bc2987388d0998e0adbb79230767d996373a27b41c6451909c95
   patches:
     # disable numpy.distutils as its deprecated and fails to build
     - no_distutils.patch
@@ -15,7 +15,7 @@ source:
       then: static.patch
 
 build:
-  number: 1
+  number: 0
   skip: ${{ build_platform != target_platform }}
 
 requirements:
