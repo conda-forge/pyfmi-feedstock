@@ -15,7 +15,7 @@ source:
       then: static.patch
 
 build:
-  number: 0
+  number: 1
   skip: ${{ build_platform != target_platform }}
 
 requirements:
