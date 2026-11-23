@@ -1,5 +1,5 @@
 context:
-  version: "2.22.0"
+  version: "2.24.0"
 
 package:
   name: pyfmi
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/modelon-community/PyFMI/archive/PyFMI-${{ version }}.tar.gz
-  sha256: fc4fb27e62364a7a2e9acbb93176f2e23d29f706b85247d887738862e5ad0c1f
+  sha256: bd757c79b975d100bf76a1b2171db2a48a1e80ed837280d8d0b9b14c9153d40c
   patches:
     # disable numpy.distutils as its deprecated and fails to build
     - no_distutils.patch
@@ -35,14 +35,14 @@ requirements:
     - fmilib
     - numpy
     - cython
-    - assimulo >=3.0
+    - assimulo >=3.9
     - if: win
       then: expat
   run:
     - python
     - fmilib
     - scipy
-    - assimulo >=3.0
+    - assimulo >=3.9
     - numpy
 
 tests:
